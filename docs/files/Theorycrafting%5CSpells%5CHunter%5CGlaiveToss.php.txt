@@ -15,10 +15,15 @@ class GlaiveToss
      * @param integer $attack_power The characters attack power.
      * @param integer $targets The number of additional targets.
      *
+     * @throws InvalidArgumentException
+     *
      * @return bool|int
      */
     public function calculate_total_damage($attack_power, $targets = 1)
     {
+        if (!is_int($attack_power) || !is_int($targets)) {
+            throw new InvalidArgumentException("One of the fields supplied was not a valid integer");
+        }
         $damage = $this->calculate_primary_damage($attack_power);
         if ($targets > 1) {
             $damage += $this->calculate_secondary_damage($attack_power, ($targets - 1));

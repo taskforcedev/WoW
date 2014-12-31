@@ -5,7 +5,7 @@
  * Currently works with primary stats only.
  *
  *
- * @version 6.0.3
+ * @version v6.0.3
  */
 class Buffs
 {

@@ -1,8 +1,6 @@
 <?php
 
 /**
- * Class Barrage
- *
  * Barrage theorycrafting, source: Wowhead.
  *
  * Main Target Formula: Mainhand weapon min damage * 0.6 * 16
@@ -10,7 +8,7 @@
  *
  * Last Updated: 31/12/2014
  *
- * @version 6.0.3
+ * @version v6.0.3
  */
 class Barrage
 {

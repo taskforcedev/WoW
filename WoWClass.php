@@ -1,10 +1,8 @@
 <?php
 
 /**
- * Class WoWClass
- *
  * Provides helper functionality for converting api id's from battle.net api into human understandable terms.
- * @version 6.0.3
+ * @version v6.0.3
  */
 Class WoWClass
 {

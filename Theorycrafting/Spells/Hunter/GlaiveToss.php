@@ -1,11 +1,10 @@
 <?php
 
 /**
- * Class GlaiveToss
+ * Glaive Toss damage theorycrafting.
+ * Spell data sourced from wowhead.
  *
- * Glaive Toss damage theorycrafting, source: Wowhead.
- *
- * @version 6.0.3
+ * @version v6.0.3
  * @link http://www.wowhead.com/spell=117050/glaive-toss Wowhead spell page.
  */
 class GlaiveToss

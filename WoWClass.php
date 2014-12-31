@@ -11,11 +11,11 @@ Class WoWClass
     /**
      * Get the textual representation of a characters class
      *
-     * @param integer $class_id
+     * @param integer $class_id The id of the class from the wow api
      *
      * @throws Exception
      *
-     * @return string
+     * @return string The class name (Capitalized Words)
      */
     public function getClassName($class_id)
     {
@@ -64,9 +64,9 @@ Class WoWClass
     /**
      * Converts human formatted names into css classes.
      *
-     * @param $class_name
+     * @param string $class_name The name of the class with capitals words.
      *
-     * @return string
+     * @return string The lower case display name
      */
     public function getDisplayName($class_name)
     {
@@ -81,10 +81,10 @@ Class WoWClass
     /**
      * Gets the css color code given a class name or id.
      *
-     * @param $identifier
+     * @param string|integer $identifier Either the class id eg: 1, or classs name eg: "Death Knight".
      *
-     * @return string
-     * 
+     * @return string The hex color code for the class.
+     *
      * @throws Exception
      */
     public function getClassColor($identifier)

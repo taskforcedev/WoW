@@ -1,10 +1,16 @@
 <?php
 
+/**
+ * Class WoWClass
+ *
+ * Provides helper functionality for converting api id's from battle.net api into human understandable terms.
+ */
 Class WoWClass
 {
-    /***
+    /**
      * Get the textual representation of a characters class
      * @param integer $class_id
+     * @throws Exception
      * @return string
      */
     public function getClassName($class_id)
@@ -45,12 +51,17 @@ Class WoWClass
                 break;
             default:
                 $class = $class_id;
-		throw new Exception("Class {$class} not found - likely we need to update API");
+                throw new Exception("Class {$class} not found - likely we need to update API");
                 break;
         }
         return $class;
     }
 
+    /**
+     * Converts human formatted names into css classes.
+     * @param $class_name
+     * @return string
+     */
     public function getDisplayName($class_name)
     {
         if ($class_name == 'Death Knight') {
@@ -61,6 +72,12 @@ Class WoWClass
         return $display_class;
     }
 
+    /**
+     * Gets the css color code given a class name or id.
+     * @param $identifier
+     * @return string
+     * @throws Exception
+     */
     public function getClassColor($identifier)
     {
         if (strlen($identifier) > 2) {

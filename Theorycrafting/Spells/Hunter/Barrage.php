@@ -1,8 +1,12 @@
 <?php
 /**
- * File: Barrage.php
+ * Barrage.php
+ *
  * Used to theorycraft hunter damage for spell 'Barrage'
+ *
  * @see http://www.wowhead.com/spell=120360/barrage
+ *
+ * @version 6.0.3
  */
 
 /**
@@ -21,8 +25,10 @@ class Barrage
 {
     /**
      * Calculates the total damage done given a number of targets
+     *
      * @param integer $weapon_min_damage The minimum weapon damage shown on the weapon tooltip.
      * @param int $targets Defaults to one.
+     *
      * @return bool|int
      */
     public function calculate_total_damage($weapon_min_damage, $targets = 1)
@@ -36,7 +42,9 @@ class Barrage
 
     /**
      * Calculates the damage to primary target.
+     *
      * @param integer $weapon_min_damage The minimum weapon damage shown on the weapon tooltip.
+     *
      * @return bool|int
      */
     public function calculate_primary_damage($weapon_min_damage)
@@ -48,9 +56,11 @@ class Barrage
     }
 
     /**
-     * Calculates the damage to secondary target(s);
+     * Calculates the damage to secondary target(s)
+     *
      * @param integer $weapon_min_damage The minimum weapon damage shown on the weapon tooltip.
      * @param integer $targets The number of secondary targets to calculate damage for.
+     *
      * @return bool|int
      */
     public function calculate_secondary_damage($weapon_min_damage, $targets)

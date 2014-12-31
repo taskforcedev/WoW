@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Class to determine a players potential raid buffs.
+ * Currently works with primary stats only.
+ *
+ *
+ * @version 6.0.3
+ */
 class Buffs
 {
     /**

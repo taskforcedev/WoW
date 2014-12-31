@@ -14,6 +14,26 @@
  */
 class Barrage
 {
+    /**
+     * Calculates the total damage done given a number of targets
+     * @param $weapon_min_damage
+     * @param int $targets Defaults to one.
+     * @return bool|int
+     */
+    public function calculate_total_damage($weapon_min_damage, $targets = 1)
+    {
+        $damage = $this->calculate_primary_damage($weapon_min_damage);
+        if ($targets > 1) {
+            $damage += $this->calculate_secondary_damage($weapon_min_damage, ($targets - 1));
+        }
+        return $damage;
+    }
+
+    /**
+     * Calculates the damage to primary target.
+     * @param $weapon_min_damage
+     * @return bool|int
+     */
     public function calculate_primary_damage($weapon_min_damage)
     {
         if (!is_int($weapon_min_damage)) {
@@ -22,6 +42,12 @@ class Barrage
         return (($weapon_min_damage * 0.6) * 16);
     }
 
+    /**
+     * Calculates the damage to secondary target(s);
+     * @param $weapon_min_damage
+     * @param integer $targets The number of secondary targets to calculate damage for.
+     * @return bool|int
+     */
     public function calculate_secondary_damage($weapon_min_damage, $targets)
     {
         if (!is_int($targets) || !is_int($weapon_min_damage)) {

@@ -29,10 +29,15 @@ class Barrage
      * @param integer $weapon_min_damage The minimum weapon damage shown on the weapon tooltip.
      * @param int $targets Defaults to one.
      *
+     * @throws InvalidArgumentException
+     *
      * @return bool|int
      */
     public function calculate_total_damage($weapon_min_damage, $targets = 1)
     {
+        if (!is_int($weapon_min_damage) || !is_int($targets)) {
+            throw new InvalidArgumentException("One of the fields supplied was not a valid integer");
+        }
         $damage = $this->calculate_primary_damage($weapon_min_damage);
         if ($targets > 1) {
             $damage += $this->calculate_secondary_damage($weapon_min_damage, ($targets - 1));

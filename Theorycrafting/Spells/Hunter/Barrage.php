@@ -1,13 +1,4 @@
 <?php
-/**
- * Barrage.php
- *
- * Used to theorycraft hunter damage for spell 'Barrage'
- *
- * @see http://www.wowhead.com/spell=120360/barrage
- *
- * @version 6.0.3
- */
 
 /**
  * Class Barrage

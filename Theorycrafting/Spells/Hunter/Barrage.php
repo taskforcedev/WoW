@@ -32,6 +32,8 @@ class Barrage
      * @throws InvalidArgumentException
      *
      * @return bool|int
+     *
+     * @link http://www.wowhead.com/spell=120360/barrage Wowhead spell page.
      */
     public function calculate_total_damage($weapon_min_damage, $targets = 1)
     {

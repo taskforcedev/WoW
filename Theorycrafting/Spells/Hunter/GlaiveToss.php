@@ -6,6 +6,7 @@
  * Glaive Toss damage theorycrafting, source: Wowhead.
  *
  * @version 6.0.3
+ * @link http://www.wowhead.com/spell=117050/glaive-toss Wowhead spell page.
  */
 class GlaiveToss
 {

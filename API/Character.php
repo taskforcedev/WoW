@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Helper class for interaction with blizzard wow character api's.
+ *
+ * @version 2015.01.01
+ */
 class Character
 {
     public $api_key;

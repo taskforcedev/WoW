@@ -3,7 +3,7 @@
 /**
  * Helper class for interaction with blizzard wow character api's.
  *
- * @version 2015.01.01
+ * @version v2015.01.01
  */
 class Character
 {

@@ -4,7 +4,7 @@
  * Provides helper functionality for converting api id's from battle.net api into human understandable terms.
  * @version v6.0.3
  */
-Class WoWClass
+class WoWClass
 {
     /**
      * Get the textual representation of a characters class

@@ -5,7 +5,7 @@
  *
  * @version v2015.01.01
  */
-class Guild
+class Guild extends ApiRequestable
 {
     /**
      * Helper method for retrieving guild info.

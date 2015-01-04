@@ -10,7 +10,7 @@
  *
  * @version v6.0.3
  */
-class Barrage implements Spell
+class Barrage implements SpellInterface
 {
     /**
      * Calculates the damage to primary target.

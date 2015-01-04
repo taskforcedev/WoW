@@ -1,6 +1,6 @@
 <?php
 
-interface Spell
+interface SpellInterface
 {
 	public function calculateTotalDamage($stat, $targets = 1)
 	{

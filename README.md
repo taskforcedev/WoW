@@ -1,6 +1,8 @@
 WoW
 ===
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/e3256ef7-be53-440f-9c2a-78ce9300964d/small.png)](https://insight.sensiolabs.com/projects/e3256ef7-be53-440f-9c2a-78ce9300964d)
+
 A collection of World of Warcraft helper classes.
 
 Feedback / Questions

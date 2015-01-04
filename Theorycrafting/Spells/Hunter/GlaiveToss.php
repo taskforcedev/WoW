@@ -7,7 +7,7 @@
  * @version v6.0.3
  * @link http://www.wowhead.com/spell=117050/glaive-toss Wowhead spell page.
  */
-class GlaiveToss
+class GlaiveToss implements Spell
 {
     /**
      * Calculates the total damage done to all targets

@@ -10,32 +10,8 @@
  *
  * @version v6.0.3
  */
-class Barrage
+class Barrage implements Spell
 {
-    /**
-     * Calculates the total damage done given a number of targets
-     *
-     * @param integer $weapon_min_damage The minimum weapon damage shown on the weapon tooltip.
-     * @param int $targets Defaults to one.
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return bool|int
-     *
-     * @link http://www.wowhead.com/spell=120360/barrage Wowhead spell page.
-     */
-    public function calculateTotalDamage($weapon_min_damage, $targets = 1)
-    {
-        if (!is_int($weapon_min_damage) || !is_int($targets)) {
-            throw new InvalidArgumentException("One of the fields supplied was not a valid integer");
-        }
-        $damage = $this->calculatePrimaryDamage($weapon_min_damage);
-        if ($targets > 1) {
-            $damage += $this->calculateSecondaryDamage($weapon_min_damage, ($targets - 1));
-        }
-        return $damage;
-    }
-
     /**
      * Calculates the damage to primary target.
      *

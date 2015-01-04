@@ -49,4 +49,20 @@ abstract class ApiRequestable
         $this->api_key = $api_key;
     }
 
+    /**
+	 * @param array|field $fields A string or an array of fields to request.
+	 *
+     * @return string $fields
+     */
+    public function buildFields($fields)
+    {
+    	if ($fields === null) {
+    		return '';
+    	} else {
+    		if (is_array($fields)) {
+                $fields = implode(",", $fields);
+            }
+            return $fields;
+    	}
+    }
 }

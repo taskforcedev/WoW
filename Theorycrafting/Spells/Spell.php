@@ -1,6 +1,6 @@
 <?php
 
-interface SpellInterface
+abstract class Spell
 {
 	public function calculateTotalDamage($stat, $targets = 1)
 	{
@@ -13,4 +13,7 @@ interface SpellInterface
         }
         return $damage;
 	}
+
+	abstract public function calculatePrimaryDamage($stat);
+	abstract public function calculateSecondaryDamage($stat, $targets);
 }

@@ -14,6 +14,11 @@ abstract class Spell
         return $damage;
 	}
 
+
 	abstract public function calculatePrimaryDamage($stat);
+	
+	/**
+	 * @param integer $targets
+	 */
 	abstract public function calculateSecondaryDamage($stat, $targets);
 }

@@ -19,14 +19,14 @@ class GlaiveToss
      *
      * @return bool|int
      */
-    public function calculate_total_damage($attack_power, $targets = 1)
+    public function calculateTotalDamage($attack_power, $targets = 1)
     {
         if (!is_int($attack_power) || !is_int($targets)) {
             throw new InvalidArgumentException("One of the fields supplied was not a valid integer");
         }
-        $damage = $this->calculate_primary_damage($attack_power);
+        $damage = $this->calculatePrimaryDamage($attack_power);
         if ($targets > 1) {
-            $damage += $this->calculate_secondary_damage($attack_power, ($targets - 1));
+            $damage += $this->calculateSecondaryDamage($attack_power, ($targets - 1));
         }
         return $damage;
     }
@@ -38,7 +38,7 @@ class GlaiveToss
      *
      * @return bool|int The amount of damage or false.
      */
-    public function calculate_primary_damage($attack_power)
+    public function calculatePrimaryDamage($attack_power)
     {
         if (!is_int($attack_power)) {
             return false;
@@ -54,7 +54,7 @@ class GlaiveToss
      *
      * @return bool|int The amount of damage or false.
      */
-    public function calculate_secondary_damage($attack_power, $targets)
+    public function calculateSecondaryDamage($attack_power, $targets)
     {
         if (!is_int($targets) || !is_int($attack_power)) {
             return false;

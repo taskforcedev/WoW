@@ -24,14 +24,14 @@ class Barrage
      *
      * @link http://www.wowhead.com/spell=120360/barrage Wowhead spell page.
      */
-    public function calculate_total_damage($weapon_min_damage, $targets = 1)
+    public function calculateTotalDamage($weapon_min_damage, $targets = 1)
     {
         if (!is_int($weapon_min_damage) || !is_int($targets)) {
             throw new InvalidArgumentException("One of the fields supplied was not a valid integer");
         }
-        $damage = $this->calculate_primary_damage($weapon_min_damage);
+        $damage = $this->calculatePrimaryDamage($weapon_min_damage);
         if ($targets > 1) {
-            $damage += $this->calculate_secondary_damage($weapon_min_damage, ($targets - 1));
+            $damage += $this->calculateSecondaryDamage($weapon_min_damage, ($targets - 1));
         }
         return $damage;
     }
@@ -43,7 +43,7 @@ class Barrage
      *
      * @return bool|int
      */
-    public function calculate_primary_damage($weapon_min_damage)
+    public function calculatePrimaryDamage($weapon_min_damage)
     {
         if (!is_int($weapon_min_damage)) {
             return false;
@@ -59,7 +59,7 @@ class Barrage
      *
      * @return bool|int
      */
-    public function calculate_secondary_damage($weapon_min_damage, $targets)
+    public function calculateSecondaryDamage($weapon_min_damage, $targets)
     {
         if (!is_int($targets) || !is_int($weapon_min_damage)) {
             return false;

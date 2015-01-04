@@ -18,17 +18,17 @@ class Buffs
     public function calculatePrimaryBuffs($primaryType, $theoretical_max = true)
     {
         $buff = $this->flasks($primaryType);
-        $buff += $this->food_buff($primaryType);
+        $buff += $this->foodBuff($primaryType);
 
         if ($theoretical_max) {
-            $other = $this->theoretical_other($primaryType);
+            $other = $this->theoreticalOther($primaryType);
             $buff += $other;
         }
 
         return $buff;
     }
 
-    public function food_buff($primaryType)
+    public function foodBuff($primaryType)
     {
         switch ($primaryType) {
             case "Stamina":
@@ -59,9 +59,9 @@ class Buffs
      * @param $primaryType
      * @return integer $amt
      */
-    public function theoretical_other($primaryType)
+    public function theoreticalOther($primaryType)
     {
-        $other = $this->augment_rune($primaryType);
+        $other = $this->augmentRune($primaryType);
         return $other;
     }
 
@@ -70,7 +70,7 @@ class Buffs
      * @param $primaryType
      * @return int
      */
-    public function augment_rune($primaryType)
+    public function augmentRune($primaryType)
     {
         if ($primaryType == "Stamina") {
             return 0;

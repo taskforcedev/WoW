@@ -82,6 +82,4 @@ class Character
 
         return $url;
     }
-
-
 }

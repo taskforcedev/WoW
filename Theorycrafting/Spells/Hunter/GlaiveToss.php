@@ -10,28 +10,6 @@
 class GlaiveToss extends Spell
 {
     /**
-     * Calculates the total damage done to all targets
-     *
-     * @param integer $attack_power The characters attack power.
-     * @param integer $targets The number of additional targets.
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return bool|int
-     */
-    public function calculateTotalDamage($attack_power, $targets = 1)
-    {
-        if (!is_int($attack_power) || !is_int($targets)) {
-            throw new InvalidArgumentException("One of the fields supplied was not a valid integer");
-        }
-        $damage = $this->calculatePrimaryDamage($attack_power);
-        if ($targets > 1) {
-            $damage += $this->calculateSecondaryDamage($attack_power, ($targets - 1));
-        }
-        return $damage;
-    }
-
-    /**
      * Calculates damage against the primary target
      *
      * @param integer $attack_power The characters attack power.

@@ -7,6 +7,28 @@
 class WoWClass
 {
     /**
+     * Holds data relating to the classes
+     */
+    public $class_data;
+    
+    public function __construct()
+    {
+        $this->class_data = [
+            1 => ['class' => 'Warrior', 'color' => '#C79C6E'],
+            2 => ['class' => 'Paladin', 'color' => '#F58CBA'],
+            3 => ['class' => 'Hunter', 'color' => '#ABD473'],
+            4 => ['class' => 'Rogue', 'color' => '#FFF569'],
+            5 => ['class' => 'Priest', 'color' => '#FFFFFF'],
+            6 => ['class' => 'Death Knight', 'color' => '#C41F3B'],
+            7 => ['class' => 'Shaman', 'color' => '#0070DE'],
+            8 => ['class' => 'Mage', 'color' => '#69CCF0'],
+            9 => ['class' => 'Warlock', 'color' => '#9482C9'],
+            10 => ['class' => 'Monk', 'color' => '#00FF96'],
+            11 => ['class' => 'Druid', 'color' => '#FF7D0A'],
+        ];
+    }
+    
+    /**
      * Get the textual representation of a characters class
      *
      * @param integer $class_id The id of the class from the wow api
@@ -17,46 +39,26 @@ class WoWClass
      */
     public function getClassName($class_id)
     {
-        switch ($class_id) {
-            case 1:
-                $class = "Warrior";
-                break;
-            case 2:
-                $class = "Paladin";
-                break;
-            case 3:
-                $class = "Hunter";
-                break;
-            case 4:
-                $class = "Rogue";
-                break;
-            case 5:
-                $class = "Priest";
-                break;
-            case 6:
-                $class = "Death Knight";
-                break;
-            case 7:
-                $class = "Shaman";
-                break;
-            case 8:
-                $class = "Mage";
-                break;
-            case 9:
-                $class = "Warlock";
-                break;
-            case 10:
-                $class = "Monk";
-                break;
-            case 11:
-                $class = "Druid";
-                break;
-            default:
-                $class = $class_id;
-                throw new Exception("Class {$class} not found - likely we need to update API");
-                break;
+        return $this->class_data[$class_id]['class']
+    }
+    
+    /**
+     * Get the numeric identifier of a characters class from it's human readable name
+     * ie 'Death Knight'
+     *
+     * @param string $class_name The capitalized human-readable class name.
+     * 
+     * @return null|int $class_id
+     */
+    public function getClassId($class_name)
+    {
+        foreach($this->class_data as $id => $data) {
+            $class = $data['class'];
+            if ($class == $class_name) {
+                return $id;
+            }
         }
-        return $class;
+        return null;
     }
 
     /**
@@ -87,51 +89,13 @@ class WoWClass
      */
     public function getClassColor($identifier)
     {
-        if (strlen($identifier) > 2) {
-            $class_name = $identifier;
-        } elseif (is_int($identifier)) {
-            $class_name = $this->getClassName($identifier);
-        } else {
-            $class_name = $this->getClassName($identifier);
+        /* Convert to class id if a string is passed in */
+        if (is_string($identifier)) {
+            $identifier = $this->getClassId($identifier);
         }
-        switch ($class_name) {
-            case "Warrior":
-                $color = '#C79C6E';
-                break;
-            case "Paladin":
-                $color = '#F58CBA';
-                break;
-            case "Hunter":
-                $color = '#ABD473';
-                break;
-            case "Rogue":
-                $color = '#FFF569';
-                break;
-            case "Priest":
-                $color = '#FFFFFF';
-                break;
-            case "Death Knight":
-                $color = '#C41F3B';
-                break;
-            case "Shaman":
-                $color = '#0070DE';
-                break;
-            case "Mage":
-                $color = '#69CCF0';
-                break;
-            case "Warlock":
-                $color = '#9482C9';
-                break;
-            case "Monk":
-                $color = '#00FF96';
-                break;
-            case "Druid":
-                $color = '#FF7D0A';
-                break;
-            default:
-                $color = '#FFFFFF';
-                break;
-        }
+        
+        $color = $this->class_data[$identifier]['color'];
+        
         return $color;
     }
 }

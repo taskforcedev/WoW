@@ -22,14 +22,6 @@ class Character extends ApiRequestable
     public function getCharacterApiUrl($character, $server, $fields = null)
     {
         $url = $this->base_api_url . "wow/character/{$server}/{$character}";
-
-        $url .= "?locale=" . $this->locale;
-        $url .= "&api_key=" . $this->api_key;
-
-        if ($fields !== null) {
-            $url .= $this->buildFields($fields);
-        }
-        
-        return $url;
+        return $this->buildRequest($url, $fields);
     }
 }

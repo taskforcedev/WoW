@@ -39,7 +39,7 @@ class WoWClass
      */
     public function getClassName($class_id)
     {
-        return $this->class_data[$class_id]['class']
+        return $this->class_data[$class_id]['class'];
     }
     
     /**

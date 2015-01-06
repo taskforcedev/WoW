@@ -20,7 +20,7 @@ class Guild extends ApiRequestable
      */
     public function getGuildApiUrl($guild, $server, $fields = null)
     {
-        $url = "https://{$this->region}.api.battle.net/wow/guild/{$server}/{$guild}";
+        $url = $this->base_api_url . "wow/guild/{$server}/{$guild}";
 
         $url .= "?locale=" . $this->locale;
         $url .= "&api_key=" . $this->api_key;

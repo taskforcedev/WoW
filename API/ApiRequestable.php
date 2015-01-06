@@ -5,8 +5,9 @@ abstract class ApiRequestable
     protected $api_key;
     public $region;
     public $locale;
+    public $base_api_url;
 
-	/**
+    /**
      * Region, locale and key can be defined in constructor or can be set via setters (whichever is preferred).
      * @param null $region
      * @param null $locale
@@ -14,9 +15,13 @@ abstract class ApiRequestable
      */
     public function __construct($region = null, $locale = null, $api_key = null)
     {
-        if (isset($region)) { $this->region = $region; }
+        if (isset($region)) {
+        	$this->region = $region;
+        	$this->base_api_url = 'https://' . $region . '.api.battle.net/';
+        }
         if (isset($locale)) { $this->locale = $locale; }
         if (isset($api_key)) { $this->api_key = $api_key; }
+        
     }
 
     /**
@@ -37,6 +42,7 @@ abstract class ApiRequestable
     public function setRegion($region)
     {
         $this->region = $region;
+        $this->base_api_url = 'https://' . $region . '.api.battle.net/';
     }
 
     /**

@@ -25,7 +25,9 @@ class Guild extends ApiRequestable
         $url .= "?locale=" . $this->locale;
         $url .= "&api_key=" . $this->api_key;
 
-        $url .= $this->buildFields($fields);
+        if ($fields !== null) {
+            $url .= $this->buildFields($fields);
+        }
         
         return $url;
     }

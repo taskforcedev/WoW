@@ -2,7 +2,7 @@
 
 abstract class ApiRequestable
 {
-	protected $api_key;
+    protected $api_key;
     public $region;
     public $locale;
 
@@ -50,8 +50,8 @@ abstract class ApiRequestable
     }
 
     /**
-	 * @param array|field $fields A string or an array of fields to request.
-	 *
+     * @param array|string $fields A string or an array of fields to request.
+     *
      * @return string $fields
      */
     public function buildFields($fields)
@@ -59,7 +59,7 @@ abstract class ApiRequestable
     	if ($fields === null) {
     		return '';
     	} else {
-    		if (is_array($fields)) {
+            if (is_array($fields)) {
                 $fields = implode(",", $fields);
             }
             return $fields;

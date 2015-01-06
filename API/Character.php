@@ -21,7 +21,7 @@ class Character extends ApiRequestable
      */
     public function getCharacterApiUrl($character, $server, $fields = null)
     {
-        $url = "https://{$this->region}.api.battle.net/wow/character/{$server}/{$character}";
+        $url = $this->base_api_url . "wow/character/{$server}/{$character}";
 
         $url .= "?locale=" . $this->locale;
         $url .= "&api_key=" . $this->api_key;

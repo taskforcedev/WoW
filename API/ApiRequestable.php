@@ -54,6 +54,26 @@ abstract class ApiRequestable
     {
         $this->api_key = $api_key;
     }
+    
+    /**
+     * Adds locale and api_key to request url and fields if they are set.
+     * 
+     * @param string $url Base url to work with.
+     * @param array|string|null $fields Any extra fields to request
+     * 
+     * @return string $url
+     */
+    protected function buildRequest($url, $fields = null)
+    {
+        $url .= '?locale=' . $this->locale;
+        $url .= '&api_key=' . $this->api_key;
+        
+        if ($fields !== null) {
+            $url .= $this->buildFields($fields);
+        }
+        
+        return $url;
+    }
 
     /**
      * @param array|string $fields A string or an array of fields to request.

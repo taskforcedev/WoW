@@ -1,6 +1,8 @@
 WoW
 ===
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/taskforcedev/WoW?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/e3256ef7-be53-440f-9c2a-78ce9300964d/small.png)](https://insight.sensiolabs.com/projects/e3256ef7-be53-440f-9c2a-78ce9300964d) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/taskforcedev/WoW/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/taskforcedev/WoW/?branch=master)
 
 A collection of World of Warcraft helper classes.

@@ -25,6 +25,7 @@ class WoWClass
             9 => ['class' => 'Warlock', 'color' => '#9482C9'],
             10 => ['class' => 'Monk', 'color' => '#00FF96'],
             11 => ['class' => 'Druid', 'color' => '#FF7D0A'],
+            12 => ['class' => 'Demon Hunter', 'color' => '#A330C9']
         ];
     }
     
